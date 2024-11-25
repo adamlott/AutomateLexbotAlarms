@@ -1,4 +1,4 @@
-As the name indicates, this repository is code that can automate the creation of Cloudwatch Alarms for Amazon Lexbots.
+As the name indicates, this repository has code for a few different AWS services that can be used to automate the creation of Cloudwatch Alarms for Amazon Lexbots.
 
 An Eventbridge rule named Lexbots is monitoring Cloudtrail for a pattern that can be found in Rule-Lexbots-CloudFormation-Template.json.  When a Lexbot Alias called 'PROD' is created, the CreateParameterStoreEntriesForLexbots lambda is invoked.
 
