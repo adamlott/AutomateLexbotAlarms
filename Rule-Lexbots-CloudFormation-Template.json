@@ -1,0 +1,23 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "CloudFormation template for EventBridge RuleLexbots",
+  "Resources": {
+    "Ruleb295963b": {
+      "Type": "AWS::Events::Rule",
+      "Properties": {
+        "Name": "Lexbots",
+        "EventPattern": "{\"source\":[\"aws.cloudtrail\"]}",
+        "State": "ENABLED",
+        "EventBusName": "default",
+        "Targets": [{
+          "Id": "Id762a1286-64e9-4e92-b5ff-851bd0290199",
+          "Arn": {
+            "Fn::Sub": "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:CreateParameterStoreEntriesForLexbots"
+          },
+          "Input": "{\n  \"source\": [\"aws.cloudtrail\"],\n  \"detail-type\": [\"AWS API Call via CloudTrail\"],\n  \"detail\": {\n    \"eventSource\": [\"lex.amazonaws.com\"],\n    \"eventName\": [\"CreateBotAlias\"],\n    \"requestParameters\": {\n      \"botAliasName\": [\"PROD\"]\n    }\n  }\n}\n"
+        }]
+      }
+    }
+  },
+  "Parameters": {}
+}
