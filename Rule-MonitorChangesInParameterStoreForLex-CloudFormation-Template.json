@@ -14,7 +14,7 @@
           "Arn": {
             "Fn::Sub": "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:CreateCloudWatchAlarms-Lex"
           },
-          "Input": "{\n  \"detail-type\": \"Parameter Store Change\",\n  \"source\": \"aws.ssm\",\n  \"account\": \"471112844772\",\n  \"region\": \"us-west-2\",\n  \"resources\": [\n    \"arn:aws:ssm:us-west-2:471112844772:parameter/lex/\"\n  ],\n  \"detail\": {\n    \"name\": \"/lex/bot-name\",\n    \"type\": \"String\",\n    \"operation\": \"Update\"\n  }\n}"
+          "Input": "{\n  \"detail-type\": \"Parameter Store Change\",\n  \"source\": \"aws.ssm\",\n  \"account\": \"<YOUR AWS ACCOUNT ID>\",\n  \"region\": \"us-west-2\",\n  \"resources\": [\n    \"arn:aws:ssm:us-west-2:<YOUR AWS ACCOUNT ID>:parameter/lex/\"\n  ],\n  \"detail\": {\n    \"name\": \"/lex/bot-name\",\n    \"type\": \"String\",\n    \"operation\": \"Update\"\n  }\n}"
         }]
       }
     }
